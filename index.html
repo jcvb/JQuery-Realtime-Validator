@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery Validator 0.1</title>
+</head>
+<body>
+
+	<form id="myform" accept-charset="utf-8">
+		<label for="username">Username</label>
+		<input type="text" name="username" >
+		<label for="password">Password</label>
+		<input type="text" name="password" >
+		<input type="submit" value="Send">
+	</form>
+	
+	<script src="/js/jQuery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="/js/jQuery.validator.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$( "#myform" ).realtimeValidate({
+            username: {
+            	required: true,
+     			email: true,
+     			maxHeight: 20
+            },
+            password: {
+            	required: true, 
+            	password: true,
+            	alphanumeric: true,
+            	maxHeight: 10,
+            	minHeight: 3
+            },
+            email: {
+            	required: true, 
+            	email: true
+            }
+        });
+	</script>
+</body>
+</html>
